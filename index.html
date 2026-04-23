@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>My Audio Player</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0f1e 0%, #0a1a2f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      padding: 1.5rem;
+    }
+    .player-card {
+      max-width: 480px;
+      width: 100%;
+      background: rgba(18, 25, 45, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(72, 187, 255, 0.1);
+      transition: transform 0.2s ease;
+    }
+    .cover {
+      background: linear-gradient(145deg, #1e2a3a, #0f172a);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.8rem;
+      text-align: center;
+      box-shadow: inset 0 2px 4px rgba(255,255,255,0.05), 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .cover svg { width: 80px; height: 80px; margin-bottom: 1rem; opacity: 0.8; }
+    h2 { color: #e2e8f0; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 0.25rem; }
+    .artist { color: #7f8ea3; font-size: 0.9rem; font-weight: 500; margin-bottom: 1.2rem; }
+    audio { width: 100%; margin: 0.5rem 0 1rem 0; border-radius: 40px; background: #0f172a; }
+    audio::-webkit-media-controls-panel { background-color: #1e293b; }
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display { color: #cbd5e1; }
+    .info-note {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 2rem;
+      padding: 0.9rem 1.2rem;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #8ba0bc;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .info-note a { color: #7dd3fc; text-decoration: none; font-weight: 500; }
+    .info-note a:hover { text-decoration: underline; }
+    footer { text-align: center; margin-top: 1.8rem; font-size: 0.7rem; color: #566b82; }
+  </style>
+</head>
+<body>
+<div class="player-card">
+  <div class="cover">
+    <!-- Vinyl / disc icon -->
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="9" stroke="#38bdf8" stroke-width="1.2" fill="none"/>
+      <circle cx="12" cy="12" r="4" fill="#38bdf8" fill-opacity="0.7"/>
+      <path d="M12 3 L12 6 M12 18 L12 21 M3 12 L6 12 M18 12 L21 12" stroke="#38bdf8" stroke-width="1" stroke-linecap="round"/>
+    </svg>
+    <h2>🎵 Youth</h2>
+    <div class="artist">PsymoNiko · Ambient / Electronic</div>
+  </div>
+  <!-- 👇 REPLACE THIS URL with your actual audio file URL 👇 -->
+  <audio controls controlsList="nodownload" preload="metadata">
+    <source src="YOUR_AUDIO_URL.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="info-note">
+    🎧 Streaming directly from GitHub Pages — no download required.<br>
+    🌊 Featuring <strong>“Youth”</strong> — part of the <strong>PsymoNiko</strong> sonic identity.
+  </div>
+  <footer>
+    🎛️ Minimal player · No tracking · Instant stream
+  </footer>
+</div>
+</body>
+</html>

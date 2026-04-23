@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>🎵 PsymoNiko</title>
+  <style>
+    body {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: monospace;
+    }
+    audio { width: 300px; }
+  </style>
+</head>
+<body>
+  <audio src="https://raw.githubusercontent.com/PsymoNiko/PsymoNiko/main/05.%20Youth.mp3" controls autoplay></audio>
+  <script>
+    // Attempt autoplay – may be blocked, but user click on the button that brought them here counts as activation
+    document.querySelector('audio').play().catch(e => console.log('autoplay blocked'));
+  </script>
+</body>
+</html>
